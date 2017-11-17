@@ -1,19 +1,24 @@
 // dependencies
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger.js");
+var db = require("../models/");
 
 // gets all the burgers in the db
 router.get("/", function(req, res) {
-	burger.selectAll(function(data) {
-		res.render("index", { burgers: data });
+	db.Burger.findAll()
+	.then(function(data) {
+		console.log(data);
+		return res.render("index", { burgers: data });
 	});
 });
 
 // adds a burger
 router.post("/", function(req, res) {
 	console.log(req.body);
-	burger.insertOne(req.body.name, function() {
+	db.Burger.create({
+		burger_name: req.body.name
+	})
+	.then(function() {
 		res.redirect("/");
 	});
 });
@@ -21,14 +26,28 @@ router.post("/", function(req, res) {
 // updates a burger entry
 router.put("/:id", function(req, res) {
 	console.log(req.body);
-	burger.updateOne(req.params.id, function() {
+	db.Burger.update(
+		{
+			devoured: true
+		}, {
+			where: {
+				id: req.params.id
+			}
+		}
+	).then(function() {
 		res.redirect("/");
 	});
 });
 
 // deletes a burger
 router.delete("/:id", function(req, res) {
-	burger.deleteOne(req.params.id, function(result) {
+	db.Burger.destroy(
+		{
+			where: {
+				id: req.params.id
+			}
+		}
+	).then(function() {
 		res.redirect("/");
 	});
 });
