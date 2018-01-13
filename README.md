@@ -1,6 +1,6 @@
 # Burger
 
-A burger logger web application that uses MySQL, Node, Express, Handlebars, and a homemade ORM. It follows the MVC design pattern, uses Node and MySQL to query and route data in the app, and uses Handlebars to generate the HTML.
+A burger logger web application that uses Sequelize, Node, Express, and Handlebars. It follows the MVC design pattern, uses Node and Sequelize to query and route data in the app, and uses Handlebars to generate the HTML.
 
 ### How It Works
 * Burger is a restaurant app that lets users input the names of burgers they'd like to eat.
@@ -10,6 +10,6 @@ A burger logger web application that uses MySQL, Node, Express, Handlebars, and 
 * The app stores every burger in a database, whether eaten or not.
 
 ### Technologies Used
-HTML, CSS, JavaScript, jQuery, MySQL, Node.js, Express.js, Handlebars, ORM, MVC
+HTML, CSS, JavaScript, jQuery, Sequelize, Node.js, Express.js, Handlebars, MVC
 
 ![Burger Screen Shot](https://github.com/natplusultra/sequelizedBurger/blob/master/public/assets/img/burger_shot.png) 
