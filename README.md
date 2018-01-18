@@ -1,4 +1,5 @@
 # Burger
+https://sequelized-burgerz.herokuapp.com/
 
 A burger logger web application that uses Sequelize, Node, Express, and Handlebars. It follows the MVC design pattern, uses Node and Sequelize to query and route data in the app, and uses Handlebars to generate the HTML.
 
